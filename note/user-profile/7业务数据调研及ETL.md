@@ -113,7 +113,7 @@ mysql> desc order_info;
                       "name":"mysqlreader",
                       "parameter":{
                           "username":"root",
-                          "password":"992318abC",
+                          "password":"******",
                           "column":[
                               "id",
                               "total_amount",
@@ -160,8 +160,8 @@ mysql> desc order_info;
                               "coupon_reduce_amount",
                               "original_total_amount"
                           ],
-                          "accessId":"LTAI5tALVEA6zmWQdwMv48K8",
-                          "accessKey":"TUJthenXxP3k7KFKZmhClEoYn9KLtj",
+                          "accessId":"******",
+                          "accessKey":"******",
                           "truncate":true,
                           "odpsServer":"http://service.odps.aliyun.com/api",
                           "tunnelServer":"http://dt.odps.aliyun.com",
