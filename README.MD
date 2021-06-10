@@ -7,8 +7,6 @@
 
 ### [项目实战]用户画像
 
-[0 标签体系下的用户画像建设](note/user-profile/0标签体系下的用户画像建设.md)
-
 [1 用户画像简介](note/user-profile/1用户画像简介.md)
 
 [2 数据标签体系](note/user-profile/2数据标签体系.md)
