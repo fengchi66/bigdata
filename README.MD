@@ -1,7 +1,9 @@
 # bigdata
 
 ### 数据产品
-[1 如何从0到1构建指标体系](http://www.woshipm.com/data-analysis/4362509.html)
+[0 如何从0到1构建指标体系](http://www.woshipm.com/data-analysis/4362509.html)
+
+[1 标签体系下的用户画像建设指南](https://mp.weixin.qq.com/s/rXmZL5-fLo2Zs_WVQM1KUQ)
 
 ### [项目实战]用户画像
 
