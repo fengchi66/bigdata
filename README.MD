@@ -21,6 +21,8 @@
 
 [7 业务数据调研及ETL](note/user-profile/7业务数据调研及ETL.md)
 
+[8 标签数据开发之统计类标签](note/user-profile/8标签数据开发之统计类标签.md)
+
 
 ### [项目实战]实时数仓
 
