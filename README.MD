@@ -5,6 +5,8 @@
 
 [1 标签体系下的用户画像建设指南](https://mp.weixin.qq.com/s/rXmZL5-fLo2Zs_WVQM1KUQ)
 
+[一文从0到1掌握用户画像知识体系](https://zhuanlan.zhihu.com/p/305181550)
+
 ### [项目实战]用户画像
 
 [1 用户画像简介](note/user-profile/1用户画像简介.md)
