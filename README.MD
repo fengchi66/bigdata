@@ -25,6 +25,16 @@
 
 [8 标签数据开发之统计类标签](note/user-profile/8标签数据开发之统计类标签.md)
 
+[9 一文带你硬核踏入机器学习的大门](https://mp.weixin.qq.com/s/kArskQAx9Ay4Dd_rpX_HKA)
+
+[10 RFM模型和KMeans聚类算法](https://mp.weixin.qq.com/s/7Zwi0lvpQ4aNbZzb7NfP3g)
+
+[11 基于RFM模型的挖掘型标签开发](https://mp.weixin.qq.com/s/j47Gb2ePFojEY88Bz5pgcg)
+
+[12 基于RFE模型的挖掘型标签开发](https://mp.weixin.qq.com/s/gXGhe4Q9VaQcEaPHV1Ywfw)
+
+[13 USG模型和决策树分类算法](https://mp.weixin.qq.com/s/KazcV9ue8DtHDVAotQKvYA)
+
 
 ### [项目实战]实时数仓
 
