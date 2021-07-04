@@ -25,6 +25,7 @@
   * [二叉树最大距离](#二叉树最大距离)
   * [二叉树中的最大搜索二叉子树](#二叉树中的最大搜索二叉子树)
   * [判断二叉树是否是满二叉树](#判断二叉树是否是满二叉树)
+  * [最低公共祖先](#最低公共祖先)
 
 ##  基本概念
 
@@ -680,7 +681,7 @@ public static int maxDistance(Node head) {
 - 左子树结点的最大值
 - 右子树结点的最小值
 
-[代码](https://github.com/algorithmzuo/algorithmbasic2020/blob/master/src/class12/Code05_MaxSubBSTSize.java)
+[代码](https://github.com/algorithmzuo/algorithmbasic2020/blob/master/src/class13/Code02_MaxSubBSTHead.java)
 
 ### 判断二叉树是否是满二叉树
 
@@ -722,6 +723,71 @@ public static boolean isFull1(Node head) {
         public Info(int h, int n) {
             height = h;
             nodes = n;
+        }
+    }
+```
+
+### 最低公共祖先
+
+给定一颗二叉树的头结点head，和另外两个节点a和b，返回a和b的最低公共祖先。
+
+**目标**
+
+x这颗树上a和b最先汇聚的点。存在两种情况：
+
+- **与x无关，x不是最低祖先**
+  - 最低祖先在左树上
+  - 最低祖先在右树上
+  - x的整棵树上，a和b不全
+- **与x有关，x就是最低祖先，就把这个结点返回**
+  - 左树上有a、b中的一个，右树上有另一个
+  - x本身就是a结点，左树或者右树上有b
+  - x本身就是b结点，左树或者右树上有a
+
+ **需要的信息**
+
+- 是否发现a
+- 是否发现b
+- 是否有公共祖先
+
+```java
+    public static Node lowestAncestor(Node head, Node a, Node b) {
+        return process(head, a, b).ans;
+        
+    }
+
+    public static Info process(Node x, Node a, Node b) {
+        if (x == null)
+            return new Info(false, false, null);
+
+        Info leftInfo  = process(x.left, a, b);
+        Info rightInfo = process(x.right, a, b);
+
+        // x等于a或者左树发现a或者右树发现a，则当前x为头的树上就发现a了
+        boolean findA = (x == a) || leftInfo.findA || rightInfo.findA;
+        boolean findB = (x == b) || leftInfo.findB || rightInfo.findB;
+
+        Node ans = null;
+        if (leftInfo.ans != null)
+            ans = leftInfo.ans;
+        else if (rightInfo.ans != null)
+            ans = rightInfo.ans;
+        else { // 左树上没答案，右树上也没答案
+            if (findA && findB)
+                ans = x;
+        }
+        return new Info(findA, findB, ans);
+    }
+
+    public static class Info {
+        public boolean findA; // 是否发现A
+        public boolean findB; // 是否发现B
+        public Node ans; // 最低公共祖先
+
+        public Info(boolean findA, boolean findB, Node ans) {
+            this.findA = findA;
+            this.findB = findB;
+            this.ans = ans;
         }
     }
 ```
