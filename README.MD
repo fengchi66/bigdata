@@ -1,6 +1,6 @@
 # bigdata
 
-### 数据产品
+### [数据产品]
 [0 如何从0到1构建指标体系](http://www.woshipm.com/data-analysis/4362509.html)
 
 [1 标签体系下的用户画像建设指南](https://mp.weixin.qq.com/s/rXmZL5-fLo2Zs_WVQM1KUQ)
@@ -12,7 +12,7 @@
 
 [2 掌握如何搭建、管理、使用和监控集群]()
 
-### 数据结构和算法
+### [数据结构和算法]
 [0 算法的复杂度](note/数据结构与算法/0算法的复杂度.md)
 
 [二叉树与树型DP](note/数据结构与算法/二叉树与树型DP.md)
