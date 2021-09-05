@@ -118,7 +118,7 @@ epoll是最新的也是目前最好的多路复用技术。**采用多路 I/O �
 
 - 结合上图可知，网络IO操作就变成多线程化了，其他核心部分仍然是线程安全的，是个不错的折中办法。Redis 6.0 将网络数据读写、请求协议解析通过多个IO线程的来处理 ， 对于真正的命令执行来说，仍然使用主线程操作，一举两得，便宜占尽！！！
 
-![img](https://gitee.com/joeyooa/data-images/raw/master/node/2021/7695CBD9-962D-4303-A7CB-7654FB04AFB9.png)
+  ![image-20210905142209417](https://gitee.com/joeyooa/data-images/raw/master/node/2021/image-20210905142209417.png)
 
 ### redis6开启多线程
 

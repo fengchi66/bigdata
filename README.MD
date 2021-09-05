@@ -16,6 +16,8 @@
 ### Redis
 [01 redis单线程vs多线程](note/消息中间件/redis/01redis单线程VS多线程.md)
 
+[06 redis分布式锁](note/消息中间件/redis/06Redis分布式锁.md)
+
 ## [数据结构和算法]
 [0 算法的复杂度](note/数据结构与算法/0算法的复杂度.md)
 
