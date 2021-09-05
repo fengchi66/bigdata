@@ -110,11 +110,11 @@ epoll是最新的也是目前最好的多路复用技术。**采用多路 I/O �
 
 - I/O 的读和写本身是堵塞的，比如当 socket 中有数据时，Redis 会通过调用先将数据从内核态空间拷贝到用户态空间，再交给 Redis 调用，而这个拷贝的过程就是阻塞的，当数据量越大时拷贝所需要的时间就越多，而这些操作都是基于单线程完成的。
 
-![img](/private/var/folders/h6/j9ckz3ns7w777cr87s4267p80000gn/T/com.apple.MindMaster/17e361c6196/bin/4CD277D7-EED8-4C28-A0B7-E03E4341301F.png)
+  ![image-20210905141815816](https://gitee.com/joeyooa/data-images/raw/master/node/2021/image-20210905141815816.png)
 
 - 在 Redis 6.0 中新增了多线程的功能来提高 I/O 的读写性能，他的主要实现思路是将主线程的 IO 读写任务拆分给一组独立的线程去执行，这样就可以使多个 socket 的读写可以并行化了，采用多路 I/O 复用技术可以让单个线程高效的处理多个连接请求（尽量减少网络IO的时间消耗），将最耗时的Socket的读取、请求解析、写入单独外包出去，剩下的命令执行仍然由主线程串行执行并和内存的数据交互。
 
-![img](/private/var/folders/h6/j9ckz3ns7w777cr87s4267p80000gn/T/com.apple.MindMaster/17e361c6196/bin/5FFD321B-C938-4EED-8C53-5C4BBDF89F9A.png)
+  ![image-20210905141840311](https://gitee.com/joeyooa/data-images/raw/master/node/2021/image-20210905141840311.png)
 
 - 结合上图可知，网络IO操作就变成多线程化了，其他核心部分仍然是线程安全的，是个不错的折中办法。Redis 6.0 将网络数据读写、请求协议解析通过多个IO线程的来处理 ， 对于真正的命令执行来说，仍然使用主线程操作，一举两得，便宜占尽！！！
 
