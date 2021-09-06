@@ -12,6 +12,9 @@
 
 [2 掌握如何搭建、管理、使用和监控集群]()
 
+## JUC
+[01 juc简介](note/juc/01juc简介.md)
+
 ## 消息中间件
 ### Redis
 [01 redis单线程vs多线程](note/消息中间件/redis/01redis单线程VS多线程.md)
