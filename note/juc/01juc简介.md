@@ -4,7 +4,11 @@
 
 java.util.concurrent在并发编程中使用的工具类
 
-![img](https://gitee.com/joeyooa/data-images/raw/master/node/2021/94873406-94C6-429D-91AD-3995D6150A5B.png)
+```java
+java.util.concurrent
+java.util.concurrent.atomic
+java.util.concurrent.locks
+```
 
 ###  进程与线程 
 
@@ -14,9 +18,25 @@ java.util.concurrent在并发编程中使用的工具类
 
 总结来说: 
 
-**`进程：指在系统中正在运行的一个应用程序；程序一旦运行就是进程；进程— —资源分配的最小单位。`** 
+**进程：指在系统中正在运行的一个应用程序；程序一旦运行就是进程；进程— —资源分配的最小单位。** 
 
-**`线程：系统分配处理器时间资源的基本单元，或者说进程之内独立执行的一个 单元执行流。线程——程序执行的最小单位。`**
+**线程：系统分配处理器时间资源的基本单元，或者说进程之内独立执行的一个 单元执行流。线程——程序执行的最小单位。**
 
 ### 线程的状态
 
+**线程状态枚举类：Thread.State**
+
+```
+public enum State {
+NEW,(新建)
+RUNNABLE,（准备就绪）
+BLOCKED,（阻塞）
+WAITING,（不见不散）
+TIMED_WAITING,（过时不候）
+TERMINATED;(终结)
+}
+```
+
+
+
+ 

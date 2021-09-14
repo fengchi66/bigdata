@@ -13,7 +13,9 @@
 [2 掌握如何搭建、管理、使用和监控集群]()
 
 ## JUC
-[01 juc简介](note/juc/01juc简介.md)
+[0 一文学懂juc基础(上)](https://www.kuangstudy.com/bbs/1374937897278402561)
+[0 一文学懂juc基础(下)](https://www.kuangstudy.com/bbs/1374936485165297666)
+
 
 ## 消息中间件
 ### Redis
