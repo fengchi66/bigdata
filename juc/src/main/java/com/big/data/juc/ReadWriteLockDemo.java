@@ -29,7 +29,6 @@ public class ReadWriteLockDemo {
         cache.get(temp);
       }, i + "").start();
     }
-
   }
 
 }

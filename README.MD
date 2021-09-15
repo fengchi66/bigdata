@@ -18,7 +18,23 @@
 
 [0 一文学懂juc基础(上)](https://www.kuangstudy.com/bbs/1374937897278402561)
 
-[0 一文学懂juc基础(下)](https://www.kuangstudy.com/bbs/1374936485165297666)
+[1 一文学懂juc基础(下)](https://www.kuangstudy.com/bbs/1374936485165297666)
+
+[2 线程基础知识复习]()
+
+[3 CompletableFuture]()
+
+[4 说说Java“锁”事]()
+
+[5 LockSupport与线程中断]()
+
+[6 Java内存模型之JMM]()
+
+[7 volatile与Java内存模型]()
+
+[8 CAS]()
+
+[9 原子操作类之18罗汉增强]()
 
 ## 消息中间件
 
