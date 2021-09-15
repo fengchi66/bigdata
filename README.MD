@@ -1,6 +1,7 @@
 # bigdata
 
 ## [数据产品]
+
 [0 如何从0到1构建指标体系](http://www.woshipm.com/data-analysis/4362509.html)
 
 [1 标签体系下的用户画像建设指南](https://mp.weixin.qq.com/s/rXmZL5-fLo2Zs_WVQM1KUQ)
@@ -8,23 +9,27 @@
 [2 一文从0到1掌握用户画像知识体系](https://zhuanlan.zhihu.com/p/305181550)
 
 ## 大数据的“三驾马车”：HDFS、MapReduce/YARN、HBase
+
 [1 从存储、计算角度掌握分布式系统框架]()
 
 [2 掌握如何搭建、管理、使用和监控集群]()
 
 ## JUC
+
 [0 一文学懂juc基础(上)](https://www.kuangstudy.com/bbs/1374937897278402561)
 
 [0 一文学懂juc基础(下)](https://www.kuangstudy.com/bbs/1374936485165297666)
 
-
 ## 消息中间件
+
 ### Redis
+
 [01 redis单线程vs多线程](note/消息中间件/redis/01redis单线程VS多线程.md)
 
 [06 redis分布式锁](note/消息中间件/redis/06Redis分布式锁.md)
 
 ## [数据结构和算法]
+
 [0 算法的复杂度](note/数据结构与算法/0算法的复杂度.md)
 
 [1 对数器和二分法](note/数据结构与算法/1对数器和二分法.md)
@@ -54,10 +59,10 @@
 [13 滑动窗口](note/数据结构与算法/13窗口内最大值或最小值的更新结构.md)
 
 ## 算法面试
+
 [1 真实面试案例分析](note/九章算法/1真实面试案例分析.md)
 
 [2 二叉树的广度优先搜索](note/九章算法/2二叉树的广度优先搜索.md)
-
 
 ## [项目实战]用户画像
 
@@ -86,7 +91,6 @@
 [12 基于RFE模型的挖掘型标签开发](https://mp.weixin.qq.com/s/gXGhe4Q9VaQcEaPHV1Ywfw)
 
 [13 USG模型和决策树分类算法](https://mp.weixin.qq.com/s/KazcV9ue8DtHDVAotQKvYA)
-
 
 ## [项目实战]实时数仓
 
