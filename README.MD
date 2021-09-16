@@ -20,7 +20,7 @@
 
 [1 一文学懂juc基础(下)](https://www.kuangstudy.com/bbs/1374936485165297666)
 
-[2 线程基础知识复习]()
+[2 线程基础知识复习](note/juc/02线程基础知识复习.md)
 
 [3 CompletableFuture]()
 
