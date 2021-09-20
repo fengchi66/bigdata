@@ -22,7 +22,7 @@
 
 [2 线程基础知识复习](note/juc/02线程基础知识复习.md)
 
-[3 CompletableFuture]()
+[3 CompletableFuture](note/juc/03CompletableFuture.md)
 
 [4 说说Java“锁”事]()
 

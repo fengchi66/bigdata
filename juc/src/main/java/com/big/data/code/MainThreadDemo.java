@@ -24,6 +24,8 @@ public class MainThreadDemo {
     }
 
     System.out.println("----------main线程运行完毕");
+
+
   }
 
 }
