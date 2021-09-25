@@ -18,9 +18,7 @@
 
 ### JUC
 
-[0 一文学懂juc基础(上)](https://www.kuangstudy.com/bbs/1374937897278402561)
-
-[1 一文学懂juc基础(下)](https://www.kuangstudy.com/bbs/1374936485165297666)
+[1 并发编程基本概念](note/juc/01并发编程基本概念.md)
 
 [2 线程基础知识复习](note/juc/02线程基础知识复习.md)
 
