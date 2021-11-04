@@ -1,0 +1,19 @@
+Apache Spark
+From Wikipedia, the free encyclopedia
+Jump to navigationJump to search
+Apache Spark
+Spark Logo
+Original author(s)	Matei Zaharia
+Developer(s)	Apache Spark
+Initial release	May 26, 2014; 6 years ago
+Stable release
+3.1.1 / March 2, 2021; 2 months ago
+Repository	Spark Repository
+Written in	Scala[1]
+Operating system	Microsoft Windows, macOS, Linux
+Available in	Scala, Java, SQL, Python, R, C#, F#
+Type	Data analytics, machine learning algorithms
+License	Apache License 2.0
+Website	spark.apache.org Edit this at Wikidata
+Apache Spark is an open-source unified analytics engine for large-scale data processing. Spark provides an interface for programming entire clusters with implicit data parallelism and fault tolerance. Originally developed at the University of California, Berkeley's AMPLab, the Spark codebase was later donated to the Apache Software Foundation, which has maintained it since.
+ategories: Apache Software Foundation projectsBig data productsCluster computingData mining and machine learning softwareFree software programmed in ScalaHadoopJava platformSoftware using the Apache licenseUniversity of California, Berkeley

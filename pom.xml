@@ -12,6 +12,7 @@
         <module>redis</module>
         <module>juc</module>
       <module>akka</module>
+      <module>spark</module>
     </modules>
 
 
