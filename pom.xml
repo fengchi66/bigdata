@@ -13,6 +13,7 @@
         <module>juc</module>
       <module>akka</module>
       <module>spark</module>
+      <module>algorithm</module>
     </modules>
 
 
