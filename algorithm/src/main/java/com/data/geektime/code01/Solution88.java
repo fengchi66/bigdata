@@ -22,7 +22,7 @@ public class Solution88 {
       nums[index++] = nums2[j++];
     }
 
-    // 把nums赋值给nums
+    // 把nums赋值给nums1
     for (int k = 0; k < nums.length; k++) {
       nums1[k] = nums[k];
     }
