@@ -1,6 +1,5 @@
 package com.data.geektime.code01;
 
-import java.util.Deque;
 import java.util.LinkedList;
 
 // 滑动窗口最大值
