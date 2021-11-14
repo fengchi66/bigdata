@@ -78,9 +78,9 @@ public class Code24_SwapNodesInPairs {
         // 本组的新end和下一组的head相连
         head.next = next;
 
-        // 更新last和head
-        last = head;
-        head = next;
+        // 更新last和head(更新到下一组交换)
+        last = head; // head也就是本组的新的end
+        head = next; // next是下一组的head
       }
       return dummy.next;
 
