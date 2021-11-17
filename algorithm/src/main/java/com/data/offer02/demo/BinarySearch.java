@@ -65,5 +65,29 @@ public class BinarySearch {
     return -1;
   }
 
+  // 二分变体2：查找最后一个值等于给定值的元素
+  public int search4(int[] nums, int target) {
+    int left = 0;
+    int right = nums.length - 1;
+    while (left <= right) {
+      int mid = (left + right) / 2;
+      if (nums[mid] > target) {
+        right = mid - 1;
+      } else if (nums[mid] < target) {
+        left = mid + 1;
+      } else { // 当nums[mid] == target时，判断此时的mid是不是最后一个元素
+        if (mid == nums.length - 1 || nums[mid] != nums[mid + 1]) {
+          return mid;
+        } else { // 此时的mid不是最后一个元素
+          left = mid + 1;
+        }
+      }
+    }
+    return -1;
+  }
+
+  // 二分变体3：查找第一个大于等于给定值的元素
+
+
 
 }
