@@ -52,6 +52,7 @@ public class Solution77 {
       }
       pre = pre.next;
     }
+    pre.next = l1 != null ? l1 : l2;
     return dummyHead.next;
   }
 }
