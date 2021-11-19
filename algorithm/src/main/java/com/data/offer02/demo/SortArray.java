@@ -50,8 +50,44 @@ public class SortArray {
 
   // 快速排序
   public int[] sortArray2(int[] nums) {
-
+    quickSort(nums, 0, nums.length - 1);
     return nums;
+  }
+
+  // nums[left,right]范围内排序
+  private void quickSort(int[] nums, int left, int right) {
+    // base case
+    if (left >= right) {
+      return;
+    }
+
+    // 自上而下的递归过程
+    // nums[left,right]范围内分区
+    int mid = partition(nums, left, right);
+    quickSort(nums, left, mid);
+    quickSort(nums, mid + 1, right);
+
+  }
+
+  private int partition(int[] nums, int left, int right) {
+    int pivot = nums[right];
+
+    int i = left;
+    for (int j = left; j <= right; j++) {
+      if (nums[j] <= pivot) {
+        // 交换
+        swap(nums, i, j);
+        i++;
+      }
+    }
+    swap(nums, i, right);
+    return i;
+  }
+
+  private void swap(int[] nums, int i, int j) {
+    int temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
   }
 
 }
