@@ -1,5 +1,8 @@
 package com.data.offer02.code;
 
+import java.time.temporal.Temporal;
+import java.util.logging.Level;
+
 // 房屋偷盗
 public class Solution89 {
 
@@ -22,4 +25,26 @@ public class Solution89 {
     }
     return dp[n - 1];
   }
+
+  public int rob2(int[] nums) {
+    if (nums == null || nums.length == 0) {
+      return 0;
+    }
+    int n = nums.length;
+    if (n == 1) {
+      return nums[0];
+    }
+
+    int first = nums[0];
+    int second = Math.max(nums[0], nums[1]);
+
+    for (int i = 2; i < nums.length; i++) {
+      // 偷当前位置或者不偷
+      int tmp = second;
+      second = Math.max(second, first + nums[i]);
+      first = tmp;
+    }
+    return second;
+  }
+
 }
