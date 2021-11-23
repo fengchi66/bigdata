@@ -1,4 +1,4 @@
-package com.data.geektime.code00;
+package com.data.geektime.week_00;
 
 import java.util.HashMap;
 

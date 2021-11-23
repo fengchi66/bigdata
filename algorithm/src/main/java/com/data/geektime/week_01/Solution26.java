@@ -1,4 +1,4 @@
-package com.data.geektime.code01;
+package com.data.geektime.week_01;
 
 // 26. 删除有序数组中的重复项
 public class Solution26 {

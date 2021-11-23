@@ -1,4 +1,4 @@
-package com.data.geektime.code01;
+package com.data.geektime.week_01;
 
 // 合并两个有序数组
 public class Solution88 {

@@ -34,6 +34,46 @@ public class BFS {
     }
     return ans;
   }
+
+  // 二叉树的层序遍历：分层
+  public List<List<Integer>> levelOrder(TreeNode root) {
+    List<List<Integer>> ans = new LinkedList<>();
+    if (root == null) {
+      return ans;
+    }
+
+    // 存每一层的节点
+    List<Integer> mid = new ArrayList<>();
+    LinkedList<TreeNode> queue = new LinkedList<>();
+    queue.offer(root);
+
+    int current = 1;
+    int next = 0;
+
+    while (!queue.isEmpty()) {
+      TreeNode node = queue.poll();
+      mid.add(node.val);
+      current--;
+
+      if (node.left != null) {
+        queue.offer(node.left);
+        next++;
+      }
+      if (node.right != null) {
+        queue.offer(node.right);
+        next++;
+      }
+
+      // 当前层遍历完了
+      if (current == 0) {
+        current = next;
+        next = 0;
+        ans.add(mid);
+        mid = new ArrayList<>();
+      }
+    }
+    return ans;
+  }
 }
 
 

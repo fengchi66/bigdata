@@ -1,4 +1,4 @@
-package com.data.geektime.code01;
+package com.data.geektime.week_01;
 import java.util.Stack;
 
 // 接雨水

@@ -1,4 +1,4 @@
-package com.data.geektime.code01;
+package com.data.geektime.week_01;
 
 // 移动0
 public class Solution283 {
