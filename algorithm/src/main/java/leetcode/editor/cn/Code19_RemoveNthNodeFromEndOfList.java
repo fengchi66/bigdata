@@ -54,8 +54,22 @@ public class Code19_RemoveNthNodeFromEndOfList {
 
     public ListNode removeNthFromEnd(ListNode head, int n) {
       // 删除的节点也可能是头结点
-      new ListNode()
+      ListNode dummyHead = new ListNode(0, head);
+      ListNode pre = dummyHead;
+      ListNode cur = head;
 
+      for (int i = 0; i < n; i++) {
+        cur = cur.next;
+      }
+
+      while (cur != null) {
+        cur = cur.next;
+        pre = pre.next;
+      }
+
+      // 此时的pre就是待删除节点的上一个节点
+      pre.next = pre.next.next;
+      return dummyHead.next;
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
