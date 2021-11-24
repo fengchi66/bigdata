@@ -87,7 +87,6 @@ public class Code20_ValidParentheses {
         }
       }
       return stack.empty();
-
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)

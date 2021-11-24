@@ -65,6 +65,7 @@ public class Code236_LowestCommonAncestorOfABinaryTree {
       if (leftNode == null && rightNode == null) {
         return null;
       }
+      return null;
 
     }
   }

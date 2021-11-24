@@ -83,7 +83,6 @@ public class Code24_SwapNodesInPairs {
         head = next; // next是下一组的head
       }
       return dummy.next;
-
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
