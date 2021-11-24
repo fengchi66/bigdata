@@ -37,7 +37,7 @@
 // 0 <= Node.val <= 9 
 // 题目数据保证列表表示的数字不含前导零 
 // 
-// Related Topics 递归 链表 数学 👍 7058 👎 0
+// Related Topics 递归 链表 数学 👍 7105 👎 0
 
 package leetcode.editor.cn;
 
@@ -52,35 +52,16 @@ public class Code2_AddTwoNumbers {
   class Solution {
 
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-      // 1.先将两个链表反转
-      l1 = reverseList(l1);
-      l2 = reverseList(l2);
-      return reverseList(addList(l1, l2));
-    }
-
-    // 反转链表
-    private ListNode reverseList(ListNode head) {
-      ListNode last = null;
-
-      while (head != null) {
-        ListNode next = head.next;
-        head.next = last;
-        last = head;
-        head = next;
-      }
-      return last;
-    }
-
-    private ListNode addList(ListNode l1, ListNode l2) {
-      ListNode dummyHead = new ListNode(0);
+      ListNode dummyHead = new ListNode(-1);
+      // dummyHead与pre事实上没有任何关系
       ListNode pre = dummyHead;
 
       int curry = 0;
-      // 两数相加
+      // 确保l1、l2链表都遍历完
       while (l1 != null || l2 != null) {
         int sum = (l1 != null ? l1.val : 0) + (l2 != null ? l2.val : 0) + curry;
-        curry = sum >= 10 ? 1 : 0;
-        sum = sum >= 10 ? sum - 10 : sum;
+        curry = sum / 10;
+        sum = sum % 10;
 
         ListNode node = new ListNode(sum);
         pre.next = node;
@@ -90,13 +71,13 @@ public class Code2_AddTwoNumbers {
         l2 = l2 != null ? l2.next : null;
       }
 
-      if (curry > 0) {
-        pre.next = new ListNode(curry);
-        pre = pre.next;
+      if (curry == 1) {
+        ListNode node = new ListNode(curry);
+        pre.next = node;
+//        pre = pre.next;
       }
       return dummyHead.next;
     }
-
   }
 //leetcode submit region end(Prohibit modification and deletion)
 
