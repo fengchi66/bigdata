@@ -51,10 +51,12 @@ public class Code22_GenerateParentheses {
       }
 
       // 在什么样的情况下可以生成左括号和右括号
+      // 可以生成左括号
       if (left > 0) {
         helper(left - 1, right, parenthesis + "(", result);
       }
 
+      // 可以生成右括号
       if (left < right) {
         helper(left, right - 1, parenthesis + ")", result);
       }
