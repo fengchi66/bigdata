@@ -75,5 +75,4 @@ public class Code102_BinaryTreeLevelOrderTraversal {
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
-
 }
