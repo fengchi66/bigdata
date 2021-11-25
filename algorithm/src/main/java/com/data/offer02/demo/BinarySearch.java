@@ -87,34 +87,32 @@ public class BinarySearch {
   }
 
   // 二分变体3：查找第一个大于等于给定值的元素
-  public int search5(int[] nums, int target) {
-    int left = 0;
-    int right = nums.length - 1;
-    while (left <= right) {
-      int mid = (left + right) / 2;
-      if (nums[mid] >= target) { // 此时位于mid的元素>=target，判断mid是不是第一个元素
-        if (mid == 0 || nums[mid - 1] < target) { // 是第一个元素，返回
-          return mid;
-        }
+  public int bsearch(int[] a, int n, int value) {
+    int low = 0;
+    int high = n - 1;
+    while (low <= high) {
+      int mid =  low + ((high - low) >> 1);
+      if (a[mid] >= value) {
+        if ((mid == 0) || (a[mid - 1] < value)) return mid;
+        else high = mid - 1;
       } else {
-        left = mid + 1;
+        low = mid + 1;
       }
     }
     return -1;
   }
 
   // 二分变体4：查找最后一个小于等于给定值的元素
-  public int search6(int[] nums, int target) {
-    int left = 0;
-    int right = nums.length - 1;
-    while (left <= right) {
-      int mid = (left + right) / 2;
-      if (nums[mid] <= target) { // 此时num[mid] <= target，判断是不是最后一个
-        if (mid == nums.length - 1 || nums[mid + 1] > target) { // 是最后一个
-          return mid;
-        }
+  public int bsearch7(int[] a, int n, int value) {
+    int low = 0;
+    int high = n - 1;
+    while (low <= high) {
+      int mid =  low + ((high - low) >> 1);
+      if (a[mid] > value) {
+        high = mid - 1;
       } else {
-        left = mid + 1;
+        if ((mid == n - 1) || (a[mid + 1] > value)) return mid;
+        else low = mid + 1;
       }
     }
     return -1;
