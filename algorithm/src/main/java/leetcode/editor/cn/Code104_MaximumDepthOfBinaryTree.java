@@ -36,6 +36,34 @@ public class Code104_MaximumDepthOfBinaryTree {
       int rightDepth = maxDepth(root.right);
       return Math.max(leftDepth, rightDepth) + 1;
     }
+
+    // 自上而下递归
+    public int maxDepth2(TreeNode root) {
+      int depth = 0;
+      int ans = 0;
+
+      dfs(root, depth, ans);
+      return ans;
+
+    }
+
+    private void dfs(TreeNode root, int depth, int ans) {
+      if (root == null) {
+        return;
+      }
+      // 遍历到当前节点
+      ans = Math.max(ans, depth);
+      depth++;
+      // 遍历左子树
+      depth++;
+      dfs(root.left, depth, ans);
+      depth--;
+
+      depth++;
+      dfs(root.right, depth, ans);
+      depth--;
+    }
+
   }
 //leetcode submit region end(Prohibit modification and deletion)
 

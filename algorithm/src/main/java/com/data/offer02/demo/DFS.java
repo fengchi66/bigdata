@@ -21,11 +21,11 @@ public class DFS {
       TreeNode node = stack.pop();
       ans.add(node.val);
 
-      if (node.left != null) {
-        stack.push(node.left);
-      }
       if (node.right != null) {
         stack.push(node.right);
+      }
+      if (node.left != null) {
+        stack.push(node.left);
       }
     }
     return ans;
