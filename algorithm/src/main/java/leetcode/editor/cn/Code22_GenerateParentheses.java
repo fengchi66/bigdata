@@ -37,6 +37,7 @@ public class Code22_GenerateParentheses {
   //leetcode submit region begin(Prohibit modification and deletion)
   class Solution {
 
+    // 1. 回溯
     public List<String> generateParenthesis(int n) {
       List<String> result = new LinkedList<>();
       helper(n, n, "", result);
@@ -60,6 +61,37 @@ public class Code22_GenerateParentheses {
       if (left < right) {
         helper(left, right - 1, parenthesis + ")", result);
       }
+    }
+
+    // 2. 回溯
+    public List<String> generateParenthesis2(int n) {
+      List<String> ans = new LinkedList<>();
+
+      helper2(n, n, new StringBuilder(), ans);
+      return ans;
+    }
+
+    // 还剩left个左括号和righ个右括号可以用
+    private void helper2(int left, int right, StringBuilder subset, List<String> ans) {
+      if (left > right) {
+        return;
+      }
+      if (left < 0 || right < 0) {
+        return;
+      }
+      if (left == 0 && right == 0) {
+        ans.add(subset.toString());
+      }
+
+      // 添加一个左括号
+      subset.append('(');
+      helper2(left - 1, right, subset, ans);
+      subset.deleteCharAt(subset.length() - 1);
+
+      // 添加一个右括号
+      subset.append(')');
+      helper2(left, right - 1, subset, ans);
+      subset.deleteCharAt(subset.length() - 1);
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
