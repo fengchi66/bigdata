@@ -31,3 +31,41 @@
 
 ## kafka中的一些集群参数
 
+- **log.dirs**：这是非常重要的参数，指定了 Broker 需要使用的若干个文件目录路径。要知道这个参数是没有默认值的，这说明什么？这说明它必须由你亲自指定。
+- **zookeeper.connect**
+- **auto.create.topics.enable**：是否允许自动创建 Topic。
+- **unclean.leader.election.enable**：是否允许 Unclean Leader 选举。
+- **auto.leader.rebalance.enable**：是否允许定期进行 Leader 选举。
+- **log.retention.{hours|minutes|ms}**：这是个“三兄弟”，都是控制一条消息数据被保存多长时间。从优先级上来说 ms 设置最高、minutes 次之、hours 最低。
+- **log.retention.bytes：**这是指定 Broker 为消息保存的总磁盘容量大小。
+- **message.max.bytes**：控制 Broker 能够接收的最大消息大小。
+
+## 生产者消息分区
+
+- 分区的作用就是提供负载均衡的能力，或者说对数据进行分区的主要原因，就是为了实现系统的高伸缩性（Scalability）。
+- **不同的分区能够被放置到不同节点的机器上，而数据的读写操作也都是针对分区这个粒度而进行的，这样每个节点的机器都能独立地执行各自分区的读写请求处理**。并且，我们还可以通过添加新的节点机器来增加整体系统的吞吐量。
+
+### 分区策略
+
+- **轮询策略**: 轮询策略有非常优秀的负载均衡表现，它总是能保证消息最大限度地被平均分配到所有分区上，故默认情况下它是最合理的分区策略，也是我们最常用的分区策略之一。
+- **自定义分区key**
+
+## 消息压缩
+
+Producer 端压缩、Broker 端保持、Consumer 端解压缩。
+
+```java
+
+ Properties props = new Properties();
+ props.put("bootstrap.servers", "localhost:9092");
+ props.put("acks", "all");
+ props.put("key.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+ props.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
+ // 开启GZIP压缩
+ props.put("compression.type", "gzip");
+ 
+ Producer<String, String> producer = new KafkaProducer<>(props);
+```
+
+## 无消息丢失配置
+
