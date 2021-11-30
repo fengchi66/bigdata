@@ -46,11 +46,19 @@ public class Code111_MinimumDepthOfBinaryTree {
       if (root == null) {
         return 0;
       }
-      int leftDepth = minDepth(root.left);
-      int rightDepth = minDepth(root.right);
+      if (root.left == null && root.right == null) {
+        return 1;
+      }
 
-      return Math.min(leftDepth, rightDepth) + 1;
-
+      // 避免有的root只有left或只有right吗，一条路走到底
+      int minDep = Integer.MAX_VALUE;
+      if (root.left != null) {
+        minDep = Math.min(minDep, minDepth(root.left));
+      }
+      if (root.right != null) {
+        minDep = Math.min(minDep, minDepth(root.right));
+      }
+      return minDep + 1;
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
