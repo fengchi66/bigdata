@@ -143,3 +143,27 @@ Rebalance 发生的时机有三个：
 
 ![img](https://static001.geekbang.org/resource/image/32/d3/321c73b51f5e5c3124765101edc53ed3.jpg)
 
+## 位移提交
+
+- Kafka Consumer 的位移提交，是实现 Consumer 端语义保障的重要手段。
+- 位移提交分为自动提交和手动提交，而手动提交又分为同步提交和异步提交。在实际使用过程中，推荐你使用手动提交机制，因为它更加可控，也更加灵活。
+- 另外，建议你同时采用同步提交和异步提交两种方式，这样既不影响 TPS，又支持自动重试，改善 Consumer 应用的高可用性
+- 要注意提交位移时可能的数据丢失或重复消费的问题。
+
+## CommitFailedException
+
+- 当**消息处理的总时间超过预设的 max.poll.interval.ms 参数值**时，Kafka Consumer 端会抛出 CommitFailedException 异常
+
+### 解决办法
+
+- 缩短单条消息处理的时间
+- 增加 Consumer 端允许下游系统消费一批消息的最大时长
+- 减少下游系统一次性消费的消息总数
+- 下游系统使用多线程来加速消费
+
+## 消费者组消费进度监控
+
+Kafka JMX 监控指标
+
+## 副本机制
+
