@@ -76,7 +76,6 @@ public class Code_Offer047_POCWxh {
       if (leftNode == null && rightNode == null && root.val == 0) {
         return null;
       }
-
       return root;
     }
   }
