@@ -62,5 +62,4 @@ public class Code876_MiddleOfTheLinkedList {
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
-
 }
