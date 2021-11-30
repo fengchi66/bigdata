@@ -67,6 +67,7 @@
   - 使用Flink Sql Gateway服务，管理Flink SQL中的元数据与UDF，并通过SQL-CLI提交SQL任务。
   - 平台集成Savepoint等任务状态管理，实现端对端的精确一次消费与任务恢复
   - 在官方开源Connector的基础上，自定义Redis、ClickHouse的Connector，丰富异构数据源的集成
+  - 支持一条线上 20+ Flink Jar任务和80+ Flink SQL任务的开发任务，支持业务方、产品等数据需求
 
 ## 个人评价
 
