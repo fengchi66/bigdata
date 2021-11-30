@@ -50,8 +50,10 @@ public class Code234_PalindromeLinkedList {
 
       // getMid
       ListNode mid = getMid(head);
-      ListNode l2 = mid.next;
-      mid.next = null;
+      ListNode l2 = mid;
+//      mid.next = null;
+
+      l2 = reverseList(l2);
 
       ListNode l1 = head;
 
@@ -75,6 +77,19 @@ public class Code234_PalindromeLinkedList {
         fast = fast.next.next;
       }
       return slow;
+    }
+
+    private ListNode reverseList(ListNode head) {
+      ListNode last = null;
+
+      while (head != null) {
+        ListNode next = head.next;
+        head.next = last;
+        last = head;
+        head = next;
+      }
+      return last;
+
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
