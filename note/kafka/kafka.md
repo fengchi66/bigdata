@@ -167,3 +167,42 @@ Kafka JMX 监控指标
 
 ## 副本机制
 
+- Kafka 确保系统**高可用**和消息高持久性的重要基石。所谓副本（Replica），本质就是一个只能追加写消息的提交日志。根据 Kafka 副本机制的定义，同一个分区下的所有副本保存有相同的消息序列，这些副本分散保存在不同的 Broker 上，从而能够对抗部分 Broker 宕机带来的数据不可用。
+- 追随者副本不处理客户端请求，它唯一的任务就是从领导者副本异步拉取消息，并写入到自己的提交日志中，从而实现与领导者副本的同步。
+- 领导者副本所在的 Broker 宕机时，Kafka 依托于 ZooKeeper 提供的监控功能能够实时感知到，并立即开启新一轮的领导者选举，从追随者副本中选一个作为新的领导者。老 Leader 副本重启回来后，只能作为追随者副本加入到集群中。
+
+![img](https://static001.geekbang.org/resource/image/d7/72/d75c01661ca5367cfd23ad92cc10e372.jpg)
+
+## Kafka控制器
+
+控制器组件（Controller），是 Apache Kafka 的核心组件。它的主要作用是在 Apache ZooKeeper 的帮助下管理和协调整个 Kafka 集群
+
+### kafka与zk的依赖
+
+![img](https://static001.geekbang.org/resource/image/4a/fb/4a2ec3372ff5e4639e5e9c780ec7fcfb.jpg)
+
+### 控制器如何选举
+
+Broker 在启动时，会尝试去 ZooKeeper 中创建 /controller 节点。Kafka 当前选举控制器的规则是：**第一个成功创建 /controller 节点的 Broker 会被指定为控制器。**
+
+### 控制器的作用
+
+- 主题管理（创建、删除、增加分区）
+- 分区重分配
+- Preferred 领导者选举Preferred 领导者选举主要是 Kafka 为了避免部分 Broker 负载过重而提供的一种换 Leader 的方案。
+- 集群成员管理（新增 Broker、Broker 主动关闭、Broker 宕机）
+- 数据服务
+
+### 控制器保存了什么数据
+
+![img](https://static001.geekbang.org/resource/image/21/d4/2174fb81fa7db42122915fee856790d4.jpg)
+
+### 控制器故障转移（Failover）
+
+![img](https://static001.geekbang.org/resource/image/fb/7d/fb9c538a27253fe069ff7ea2f02fa17d.jpg)
+
+最开始时，Broker 0 是控制器。当 Broker 0 宕机后，ZooKeeper 通过 Watch 机制感知到并删除了 /controller 临时节点。之后，所有存活的 Broker 开始竞选新的控制器身份。Broker 3 最终赢得了选举，成功地在 ZooKeeper 上重建了 /controller 节点。之后，Broker 3 会从 ZooKeeper 中读取集群元数据信息，并初始化到自己的缓存中。至此，控制器的 Failover 完成，可以行使正常的工作职责了。
+
+### 总结
+
+![img](https://static001.geekbang.org/resource/image/a7/07/a77479402c0fddbf7541d26d72a97707.jpg)
