@@ -53,20 +53,19 @@ public class Code236_LowestCommonAncestorOfABinaryTree {
   class Solution {
 
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-      if (root == null) {
-        return null;
+      if (root == null || root == p || root == q) {
+        return root;
       }
 
       // 分别在root的左树和右树上找公共祖先
       TreeNode leftNode = lowestCommonAncestor(root.left, p, q);
       TreeNode rightNode = lowestCommonAncestor(root.right, p, q);
 
-      // 如果左、右树上都没有p、q的祖先，那么root
-      if (leftNode == null && rightNode == null) {
-        return null;
+      // 如果左、右树上都存在p1或者p2，那么root就是最低祖先
+      if (leftNode != null && rightNode != null) {
+        return root;
       }
-      return null;
-
+      return leftNode != null ? leftNode : rightNode;
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
