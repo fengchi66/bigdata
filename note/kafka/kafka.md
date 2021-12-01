@@ -206,3 +206,4 @@ Broker 在启动时，会尝试去 ZooKeeper 中创建 /controller 节点。Kafk
 ### 总结
 
 ![img](https://static001.geekbang.org/resource/image/a7/07/a77479402c0fddbf7541d26d72a97707.jpg)
+
