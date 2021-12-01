@@ -50,6 +50,10 @@
 
 ## 消息中间件
 
+## Kafka
+
+[Kafka核心技术](note/kafka/kafka.md)
+
 ### Redis
 
 [01 redis单线程vs多线程](note/消息中间件/redis/01redis单线程VS多线程.md)

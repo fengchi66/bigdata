@@ -207,3 +207,13 @@ Broker 在启动时，会尝试去 ZooKeeper 中创建 /controller 节点。Kafk
 
 ![img](https://static001.geekbang.org/resource/image/a7/07/a77479402c0fddbf7541d26d72a97707.jpg)
 
+## HW
+
+在时刻 T，任意创建时间（Event Time）为 T’，且 T’≤T 的所有事件都已经到达或被观测到，那么 T 就被定义为水位。用于界定分区中已提交和未提交的消息。
+
+缺陷：Leader 副本高水位更新和 Follower 副本高水位更新在时间上是存在错配的。这种错配是很多“数据丢失”或“数据不一致”问题的根源。
+
+![img](https://static001.geekbang.org/resource/image/98/3f/989d13e4bc4f44618a10b5b7bd6f523f.jpg)
+
+## kafka调优
+
