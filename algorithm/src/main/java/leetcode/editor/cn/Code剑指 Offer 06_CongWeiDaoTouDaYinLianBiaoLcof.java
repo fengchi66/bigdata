@@ -42,7 +42,6 @@ class Code_Offer_CongWeiDaoTouDaYinLianBiaoLcof {
         ans[i] = stack.pop();
         i++;
       }
-
       return ans;
     }
   }
