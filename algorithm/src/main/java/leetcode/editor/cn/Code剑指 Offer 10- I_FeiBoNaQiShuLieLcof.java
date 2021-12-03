@@ -53,7 +53,6 @@ class Code_Offer_FeiBoNaQiShuLieLcof {
         r = (p + q) % MOD;
       }
       return r;
-
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
