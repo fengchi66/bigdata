@@ -50,7 +50,7 @@
 
 ## 消息中间件
 
-## Kafka
+### Kafka
 
 [Kafka核心技术](note/kafka/kafka.md)
 
