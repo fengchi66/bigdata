@@ -28,32 +28,46 @@
 // Related Topics 栈 设计 👍 235 👎 0
 
 package leetcode.editor.cn;
+
+import java.util.Stack;
+
 // 剑指 Offer 30.包含min函数的栈
 class Code_Offer_BaoHanMinhanShuDeZhanLcof {
-    //leetcode submit region begin(Prohibit modification and deletion)
-class MinStack {
 
-    /** initialize your data structure here. */
+  //leetcode submit region begin(Prohibit modification and deletion)
+  class MinStack {
+
+    // 用一个栈来记录前缀最小值
+    Stack<Integer> preMin = new Stack<>();
+    Stack<Integer> stack = new Stack<>();
+
     public MinStack() {
 
     }
-    
+
     public void push(int x) {
-
+      stack.push(x);
+      // pre记录的是前缀最小值
+      if (preMin.empty()) {
+        preMin.push(x);
+      } else {
+        preMin.push(Math.min(preMin.peek(), x));
+      }
     }
-    
+
     public void pop() {
-
+      preMin.pop();
+      stack.pop();
     }
-    
+
     public int top() {
-
+      return stack.peek();
     }
-    
+
     public int min() {
-
+      return preMin.peek();
     }
-}
+  }
 
 /**
  * Your MinStack object will be instantiated and called as such:
