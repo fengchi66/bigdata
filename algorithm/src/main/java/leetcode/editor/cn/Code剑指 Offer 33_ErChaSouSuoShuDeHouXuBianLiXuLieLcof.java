@@ -38,6 +38,7 @@ class Code_Offer_ErChaSouSuoShuDeHouXuBianLiXuLieLcof {
   class Solution {
 
     public boolean verifyPostorder(int[] postorder) {
+      return false;
 
     }
   }
