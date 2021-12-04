@@ -33,23 +33,31 @@
 // Related Topics 树 深度优先搜索 广度优先搜索 二叉树 👍 192 👎 0
 
 package leetcode.editor.cn;
+
 // 剑指 Offer 27.二叉树的镜像
 class Code_Offer_ErChaShuDeJingXiangLcof {
-    //leetcode submit region begin(Prohibit modification and deletion)
-/**
- * Definition for a binary tree node.
- * public class TreeNode {
- *     int val;
- *     TreeNode left;
- *     TreeNode right;
- *     TreeNode(int x) { val = x; }
- * }
- */
-class Solution {
-    public TreeNode mirrorTree(TreeNode root) {
+  //leetcode submit region begin(Prohibit modification and deletion)
 
+  /**
+   * Definition for a binary tree node. public class TreeNode { int val; TreeNode left; TreeNode
+   * right; TreeNode(int x) { val = x; } }
+   */
+  class Solution {
+
+    // 自下而上反转二叉树
+    public TreeNode mirrorTree(TreeNode root) {
+      if (root == null) {
+        return null;
+      }
+
+      TreeNode leftNode = mirrorTree(root.left);
+      TreeNode rightNode = mirrorTree(root.right);
+      root.left = rightNode;
+      root.right = leftNode;
+
+      return root;
     }
-}
+  }
 //leetcode submit region end(Prohibit modification and deletion)
 
 }
