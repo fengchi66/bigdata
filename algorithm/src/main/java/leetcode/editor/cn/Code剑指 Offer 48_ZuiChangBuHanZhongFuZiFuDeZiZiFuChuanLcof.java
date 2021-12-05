@@ -46,6 +46,7 @@ class Code_Offer_ZuiChangBuHanZhongFuZiFuDeZiZiFuChuanLcof {
   //leetcode submit region begin(Prohibit modification and deletion)
   class Solution {
 
+    // 固定左指针，向右移动右指针，直到遇到重复元素
     public int lengthOfLongestSubstring(String s) {
       int j = 0;
       int ans = 0;
