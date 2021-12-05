@@ -50,30 +50,30 @@ public class Code17_LetterCombinationsOfAPhoneNumber {
   //leetcode submit region begin(Prohibit modification and deletion)
   class Solution {
 
+    Map<Character, String> phoneMap = new HashMap<Character, String>() {{
+      put('2', "abc");
+      put('3', "def");
+      put('4', "ghi");
+      put('5', "jkl");
+      put('6', "mno");
+      put('7', "pqrs");
+      put('8', "tuv");
+      put('9', "wxyz");
+    }};
+
+    StringBuilder subset = new StringBuilder();
+    List<String> ans = new LinkedList<>();
+
     public List<String> letterCombinations(String digits) {
-      List<String> ans = new LinkedList<>();
       if (digits == null || digits.length() == 0) {
         return ans;
       }
-      Map<Character, String> phoneMap = new HashMap<Character, String>() {{
-        put('2', "abc");
-        put('3', "def");
-        put('4', "ghi");
-        put('5', "jkl");
-        put('6', "mno");
-        put('7', "pqrs");
-        put('8', "tuv");
-        put('9', "wxyz");
-      }};
 
-      StringBuilder subset = new StringBuilder();
-      dfs(digits, ans, 0, subset, phoneMap);
-
+      dfs(digits, 0);
       return ans;
     }
 
-    private void dfs(String digits, List<String> ans, int index, StringBuilder subset,
-        Map<Character, String> phoneMap) {
+    private void dfs(String digits, int index) {
       // base case
       if (index == digits.length()) {
         ans.add(new String(subset));
@@ -84,7 +84,7 @@ public class Code17_LetterCombinationsOfAPhoneNumber {
         for (int i = 0; i < phone.length(); i++) {
           // 回溯
           subset.append(phone.charAt(i));
-          dfs(digits, ans, index + 1, subset, phoneMap);
+          dfs(digits, index + 1);
           subset.deleteCharAt(index);
         }
       }
