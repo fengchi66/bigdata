@@ -60,7 +60,7 @@
 
 [01 数据结构](note/redis/1数据结构.md)
 
-[Redis的持久化](note/redis/2Redis的持久化.md)
+[02 redis的持久化](note/redis/2Redis的持久化.md)
 
 
 ## [数据结构和算法]
