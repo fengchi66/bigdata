@@ -56,9 +56,12 @@
 
 ### Redis
 
-[01 redis单线程vs多线程](note/消息中间件/redis/01redis单线程VS多线程.md)
+[00 redis单线程vs多线程](note/消息中间件/redis/01redis单线程VS多线程.md)
 
-[06 redis分布式锁](note/消息中间件/redis/06Redis分布式锁.md)
+[01 数据结构](note/redis/1数据结构.md)
+
+[02 redis的持久化](note/redis/2Redis 的持久化.md)
+
 
 ## [数据结构和算法]
 
