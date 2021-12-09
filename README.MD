@@ -11,7 +11,15 @@
 ## Flink
 [1 flink基础](note/flink/1flink基础.md)
 
-[2 网络流控及反压剖析](https://flink-learning.org.cn/article/detail/138316d1556f8f9d34e517d04d670626)
+[2 time与watermark](https://github.com/fengchi66/bigdata-project/blob/main/docs/flink/Time%E4%B8%8EWatermark.md)
+
+[3 网络流控及反压剖析](https://flink-learning.org.cn/article/detail/138316d1556f8f9d34e517d04d670626)
+
+[4 flink内存模型](https://github.com/fengchi66/bigdata-project/blob/main/docs/flink/FlinkTaskExecutor%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86.md)
+
+[5 双流join](https://github.com/fengchi66/bigdata-project/blob/main/docs/flink/FlinkStreamingJoins.md)
+
+[6 window](https://github.com/fengchi66/bigdata-project/blob/main/docs/flink/Window.md)
 
 
 ## Scala
