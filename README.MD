@@ -14,6 +14,15 @@
 [2 网络流控及反压剖析](https://flink-learning.org.cn/article/detail/138316d1556f8f9d34e517d04d670626)
 
 
+## Scala
+[1 面向对象的scala](note/scala/1面向对象的scala.md)
+
+[2 函数式的scala](note/scala/2函数式的scala.md)
+
+[3 隐式转换](note/scala/3隐式转换.md)
+
+[4 类型参数化](note/scala/4类型参数化.md)
+
 ## 云原生
 
 
