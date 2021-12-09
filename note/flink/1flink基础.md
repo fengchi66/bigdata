@@ -101,7 +101,7 @@
 
   一同发挥作用的。
 
-- **当屏障到达Kafka sink后，触发preCommit(**实际上是KafkaProducer.flush())方法刷写消息数据，但还未真正提交。接下来还是需要通过检查点来触发提交阶段。
+- **当屏障到达Kafka sink后，触发preCommit**(实际上是KafkaProducer.flush())方法刷写消息数据，但还未真正提交。接下来还是需要通过检查点来触发提交阶段。
 
 #### 提交阶段
 
