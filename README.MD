@@ -9,6 +9,8 @@
 [2 一文从0到1掌握用户画像知识体系](https://zhuanlan.zhihu.com/p/305181550)
 
 ## Flink
+[0 流处理基本概念](https://github.com/fengchi66/bigdata-project/blob/main/docs/flink/%E6%B5%81%E5%88%9D%E7%BA%A7%E5%9F%BA%E7%A1%80.md)
+
 [1 flink基础](note/flink/1flink基础.md)
 
 [2 time与watermark](https://github.com/fengchi66/bigdata-project/blob/main/docs/flink/Time%E4%B8%8EWatermark.md)
