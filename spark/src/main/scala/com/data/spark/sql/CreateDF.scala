@@ -26,7 +26,7 @@ object CreateDF {
       .option("driver", "com.mysql.jdbc.Driver")
       .option("url", "jdbc:mysql://hostname:port/mysql")
       .option("user", "用户名")
-      .option("password","密码")
+      .option("password", "密码")
       .option("numPartitions", 20)
       .option("dbtable", "数据表名 ")
       .load()
@@ -34,7 +34,6 @@ object CreateDF {
     // 3. hive表
 
     df1.show()
-
 
 
     spark.stop()
