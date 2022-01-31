@@ -94,7 +94,7 @@ public class Solution {
 
     int ans = Integer.MIN_VALUE;
     for (int i = 1; i <= n; i++) {
-      ans = Math.max(ans, s[i] - preMin[i-1]);
+      ans = Math.max(ans, s[i] - preMin[i - 1]);
     }
     return ans;
   }

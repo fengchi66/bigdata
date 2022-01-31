@@ -53,6 +53,8 @@
 
 package leetcode.editor.cn;
 
+import com.sun.javafx.beans.IDProperty;
+
 // 322.零钱兑换
 public class Code322_CoinChange {
 
@@ -121,6 +123,21 @@ public class Code322_CoinChange {
       }
     }
     return dp[0][amount];
+  }
+
+  // 完全背包
+  public int coinChange3(int[] coins, int amount) {
+    // dp[n]表示凑齐n金额所需要的最少硬币数
+    int[] dp = new int[amount];
+    dp[0] = 0;
+
+    for (int i = 0; i < coins.length; i++) {
+      for (int j = coins[i]; j <= amount; j++) {
+        dp[j] = Math.min(dp[j], dp[j - coins[i]]);
+      }
+    }
+    return dp[amount];
+
   }
 
 
