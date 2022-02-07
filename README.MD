@@ -120,6 +120,8 @@
 
 [区间与树形DP](note/算法面试2022/区间与树形DP.md)
 
+[字典树](https://www.yuque.com/zishenhulianwangyinleren/prtlhm/etg5h9)
+
 ## [项目实战]用户画像
 
 [1 用户画像简介](note/user-profile/1用户画像简介.md)
