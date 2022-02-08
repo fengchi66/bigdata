@@ -62,23 +62,18 @@ public class Code34_FindFirstAndLastPositionOfElementInSortedArray {
     // 查找第一个比target大的下标
     private int search(int[] nums, int target) {
       int left = 0;
-      int right = nums.length - 1;
+      int right = nums.length;
 
-      while (left <= right) {
+      while (left < right) {
         int mid = (left + right) / 2;
         if (nums[mid] > target) {
-          // 判断mid是不是第一个
-          if (mid == 0 || nums[mid - 1] <= target) {
-            return mid;
-          } else { // mid不是第一个
-            right = mid - 1;
-          }
+          right = mid; // 答案是right或者在right左边
         } else {
-          left = mid + 1;
+          left = mid + 1; // 答案在mid右边
         }
       }
       // 如果找不到比target大的下标，说明数组元素都比target小，将nums.length返回
-      return nums.length;
+      return right;
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)

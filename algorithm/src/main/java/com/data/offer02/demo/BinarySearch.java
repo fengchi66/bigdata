@@ -105,6 +105,22 @@ public class BinarySearch {
     return -1;
   }
 
+  // 查找第一个大于等于target的元素
+  public int search02(int[] nums, int target) {
+    int left = 0;
+    int right = nums.length;
+    while (left < right) {
+      int mid = (left + right) / 2;
+      if (nums[mid] >= target) {
+        right = mid;
+      } else {
+        left = mid - 1;
+      }
+    }
+    return right;
+  }
+
+
   // 二分变体4：查找最后一个小于等于给定值的元素
   public int bsearch7(int[] a, int n, int value) {
     int low = 0;
@@ -123,4 +139,30 @@ public class BinarySearch {
     }
     return -1;
   }
+
+  // 查找最后一个小于等于target的元素
+  public int search03(int[] nums, int target) {
+    int left = -1;
+    int right = nums.length - 1;
+    while (left < right) {
+      int mid = (left + right + 1) / 2;
+      if (nums[mid] <= target) {
+        left = mid;
+      } else {
+        right = mid - 1;
+      }
+    }
+    return right;
+  }
+
+  public static void main(String[] args) {
+    int[] nums = {1, 2, 3, 4, 5, 6, 7, 8};
+    int target = 4;
+
+    BinarySearch search = new BinarySearch();
+    System.out.println(search.bsearch(nums, 8, target));
+    System.out.println(search.search2(nums, target));
+
+  }
+
 }
