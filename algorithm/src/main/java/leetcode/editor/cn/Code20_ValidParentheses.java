@@ -51,7 +51,7 @@
 // 1 <= s.length <= 10⁴ 
 // s 仅由括号 '()[]{}' 组成 
 // 
-// Related Topics 栈 字符串 👍 2781 👎 0
+// Related Topics 栈 字符串 👍 2948 👎 0
 
 package leetcode.editor.cn;
 
@@ -65,28 +65,28 @@ public class Code20_ValidParentheses {
   class Solution {
 
     public boolean isValid(String s) {
+
       HashMap<Character, Character> map = new HashMap<>();
-      map.put('}', '{');
-      map.put(']', '[');
       map.put(')', '(');
+      map.put(']', '[');
+      map.put('}', '{');
 
       Stack<Character> stack = new Stack<>();
 
-      for (int i = 0; i < s.length(); i++) {
-        // 遇到左括号就加入到栈中
-        if (map.values().contains(s.charAt(i))) {
-          stack.push(s.charAt(i));
-        } else { // 遇到右括号,看栈顶元素是否是左括号，如果不是，直接返回false
-          if (stack.empty()) {
-            return false;
-          }
-          Character ch = stack.pop();
-          if (map.get(s.charAt(i)) != ch) {
-            return false;
-          }
+      for (char ch : s.toCharArray()) {
+        // 遇到左括号，加入到栈
+        if (map.containsValue(ch)) {
+          stack.push(ch);
+        } else if (map.containsKey(ch) && !stack.isEmpty()) { // 遇到右括号且stack不为空，则从stack中取出看是不是左括号
+          Character pop = stack.pop();
+         if (map.get(ch) != pop) {
+           return false;
+         }
+        } else {
+          return false;
         }
       }
-      return stack.empty();
+      return stack.isEmpty();
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
