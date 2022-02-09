@@ -38,7 +38,7 @@
 // 
 //
 // 进阶：如果你已经实现复杂度为 O(n) 的解法，尝试使用更为精妙的 分治法 求解。 
-// Related Topics 数组 分治 动态规划 👍 4285 👎 0
+// Related Topics 数组 分治 动态规划 👍 4320 👎 0
 
 package leetcode.editor.cn;
 
@@ -50,14 +50,14 @@ public class Code53_MaximumSubarray {
 
     public int maxSubArray(int[] nums) {
       int n = nums.length;
+      // dp[i]表示从0位置开始到i位置的最大子数组和
       int[] dp = new int[n];
       dp[0] = nums[0];
       int ans = nums[0];
 
-      // dp[𝑖] 表示以 𝑖 为结尾的最大子序和
       for (int i = 1; i < n; i++) {
-        // 如果dp[i-1] + num[i] < num[i],说明dp[i-1] <0,可以舍弃，子数组从位置开始
-        dp[i] = Math.max(dp[i - 1] + nums[i], nums[i]);
+        // dp[i-1]选或者不选，取最大值
+        dp[i] = Math.max(dp[i-1] + nums[i], nums[i]);
         ans = Math.max(ans, dp[i]);
       }
       return ans;
