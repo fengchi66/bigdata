@@ -94,7 +94,6 @@ public class Code150_EvaluateReversePolishNotation {
         }
       }
       return stack.peek();
-
     }
 
     // 表达式计算
