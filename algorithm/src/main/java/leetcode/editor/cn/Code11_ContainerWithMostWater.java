@@ -44,7 +44,7 @@
 // 2 <= n <= 10⁵ 
 // 0 <= height[i] <= 10⁴ 
 // 
-// Related Topics 贪心 数组 双指针 👍 2963 👎 0
+// Related Topics 贪心 数组 双指针 👍 3169 👎 0
 
 package leetcode.editor.cn;
 
@@ -55,23 +55,7 @@ public class Code11_ContainerWithMostWater {
   class Solution {
 
     public int maxArea(int[] height) {
-      // 相向双指针
-      int left = 0;
-      int right = height.length - 1;
-      int ans = 0;
 
-      while (left < right) {
-        // 容积计算
-        int h = Math.min(height[left], height[right]) * (right - left);
-        ans = Math.max(ans, h);
-        // 指针移动策略
-        if (height[left] <= height[right]) {
-          left++;
-        } else {
-          right--;
-        }
-      }
-      return ans;
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
