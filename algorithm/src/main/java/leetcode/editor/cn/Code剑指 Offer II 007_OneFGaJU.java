@@ -4,6 +4,7 @@
  */
 package leetcode.editor.cn;
 
+import java.lang.annotation.Target;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
@@ -15,34 +16,45 @@ class Code_Offer_OneFGaJU {
   class Solution {
 
     List<List<Integer>> ans = new LinkedList<>();
-    LinkedList<Integer> subset = new LinkedList<>();
 
-
+    // 在固定一个数的情况下，求threeSum==0
     public List<List<Integer>> threeSum(int[] nums) {
-
-      if (nums == null || nums.length < 3) {
-        return null;
+      if (nums.length >= 3) {
+        Arrays.sort(nums);
       }
 
-      dfs(nums, 0);
+      int i = 0;
+      while (i < nums.length - 2) {
+        twoSum(nums, i);
+        // 跳过i相同的数
+        int temp = nums[i];
+        while (nums[i] == temp && i < nums.length - 2) {
+          i++;
+        }
+      }
+      return ans;
 
-      return null;
     }
 
-    // 从index位置出发，找数组中和为 0 的三个数
-    private void dfs(int[] nums, int index) {
-      // 如果状态长度为3，且和为0
-      if (subset.size() == 3 && subset.stream().mapToInt(r -> r).sum() == 0) {
-        ans.add(new LinkedList<>(subset));
-      } else if (index < nums.length) {
-        // 不选当前位置的数字
-        dfs(nums, index + 1);
-
-        // 选当前位置的数字
-        subset.offerLast(nums[index]);
-        dfs(nums, index + 1);
-        subset.pollLast();
+    // 从i+1位置出发，找数组中和为 0 的三个数
+    private void twoSum(int[] nums, int i) {
+      int j = i + 1;
+      int k = nums.length - 1;
+      while (j < k) {
+        if (nums[i] + nums[j] + nums[k] == 0) {
+          ans.add(Arrays.asList(nums[i], nums[j], nums[k]));
+          // 跳过j相同的数据
+          int temp = nums[j];
+          while (nums[j] == temp && j < k) {
+            j++;
+          }
+        } else if (nums[i] + nums[j] + nums[k] < 0) {
+          j++;
+        } else {
+          k--;
+        }
       }
+
     }
   }
 //leetcode submit region end(Prohibit modification and deletion)
