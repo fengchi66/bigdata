@@ -55,6 +55,7 @@ package leetcode.editor.cn;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Stack;
 
 // 144.二叉树的前序遍历
 public class Code144_BinaryTreePreorderTraversal {
@@ -69,18 +70,36 @@ public class Code144_BinaryTreePreorderTraversal {
 
     List<Integer> ans = new LinkedList<>();
 
+    // 迭代的方式
     public List<Integer> preorderTraversal(TreeNode root) {
-      dfs(root);
+      if (root == null) {
+        return ans;
+      }
+
+      Stack<TreeNode> stack = new Stack<>();
+      stack.push(root);
+
+      while (!stack.empty()) {
+        TreeNode node = stack.pop();
+        ans.add(node.val);
+
+        if (node.right != null) {
+          stack.push(node.right);
+        }
+        if (node.left != null) {
+          stack.push(node.left);
+        }
+      }
       return ans;
     }
 
-    private void dfs(TreeNode root) {
-      if (root == null)
-        return;
-      ans.add(root.val);
-      dfs(root.left);
-      dfs(root.right);
-    }
+//    private void dfs(TreeNode root) {
+//      if (root == null)
+//        return;
+//      ans.add(root.val);
+//      dfs(root.left);
+//      dfs(root.right);
+//    }
   }
 //leetcode submit region end(Prohibit modification and deletion)
 
